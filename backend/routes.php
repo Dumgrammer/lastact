@@ -7,6 +7,7 @@
 
     $conn = new Connection();
     $pdo = $conn->connect();
+    
 
     // Initialize Get and Post objects
     $get = new Get($pdo);

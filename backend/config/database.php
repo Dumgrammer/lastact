@@ -1,7 +1,7 @@
 <?php
 
 //set default timezone manila
-date_default_timezone_set('Asia/Manila');
+date_default_timezone_set('Asia/Shanghai');
 
 //set request timeout
 set_time_limit(1000);
@@ -26,6 +26,7 @@ class Connection{
     public function connect(){
         return new \PDO($this->connectionString, USER, PASSWORD, $this->pdo_options);
     }
+    
 }
 
 ?>
