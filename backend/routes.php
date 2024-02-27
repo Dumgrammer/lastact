@@ -61,13 +61,10 @@
             // Retrieves JSON-decoded data from php://input using file_get_contents
             $data = json_decode(file_get_contents("php://input"));
             switch($request[0]){
-                case 'employees':
-                    if (count($request)>1) {
-                        echo json_encode($post->post_employees($request[1]));
-                    }
-                    else{
-                        echo json_encode($post->post_employees());
-                    }
+                case 'addemployees':
+                
+                        echo json_encode($post->add_employees($data));
+
                     break;
                     case 'locations':
                         if (count($request)>1) {
@@ -77,14 +74,14 @@
                             echo json_encode($post->post_locations());
                         }
                         break;
-                case 'addemployee':
+                case 'editemployees':
                     // Return JSON-encoded data for adding employees
-                    echo json_encode($post->add_employees($data));
+                    echo json_encode($post->edit_employees($data,$request[1]));
                     break;
                 
-                case 'addjob':
+                case 'deleteemployees':
                     // Return JSON-encoded data for adding jobs
-                    echo json_encode($post->add_jobs($data));
+                    echo json_encode($post->delete_employees($data,$request[1]));
                     break;
                 
                 default:

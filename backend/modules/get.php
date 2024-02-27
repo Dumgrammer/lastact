@@ -1,6 +1,7 @@
 <?php
+require_once "global.php";
 
-class GET{
+class GET extends GlobalMethods{
 
 private $pdo;
 
